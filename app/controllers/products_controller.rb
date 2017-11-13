@@ -1,29 +1,24 @@
 class ProductsController < ApplicationController
+  # before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_manager!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  expose :products, ->{ Product.all }
+  expose :product
+
   # GET /products
-  def index
-    @products = Product.all
-  end
+  def index; end
 
-  # GET /products/1
-  def show
-  end
+  def show; end
 
-  # GET /products/new
-  def new
-    @product = Product.new
-  end
+  def new; end
 
-  # GET /products/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /products
   def create
-    @product = current_manager.products.new(product_params)
-    if @product.save
-      redirect_to @product, notice: 'The product was successfully created.'
+    product = current_manager.products.new(product_params)
+    if product.save
+      redirect_to product_path(product), notice: 'The product was successfully created.'
     else
       render :new
     end

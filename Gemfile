@@ -17,6 +17,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'devise'
+gem 'slim-rails'
+gem 'decent_decoration', '~> 0.1.0'
+gem 'decent_exposure', '3.0.0'
+gem 'draper', '~> 3.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
