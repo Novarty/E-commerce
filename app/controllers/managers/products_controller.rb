@@ -1,11 +1,12 @@
-class ProductsController < ApplicationController
-  # before_action :authenticate_user!, except: [:index, :show]
+class Managers::ProductsController < ApplicationController
   before_action :authenticate_manager!, except: [:index, :show]
 
   expose :products, ->{ Product.all }
   expose :product
 
-  def index; end
+  def index
+    # respond_with products
+  end
 
   def show; end
 
@@ -16,17 +17,17 @@ class ProductsController < ApplicationController
   def create
     product.manager = current_manager
     product.save
-    respond_with product
+    respond_with :managers, product
   end
 
   def update
     product.update(product_params)
-    respond_with product
+    respond_with :managers, product
   end
 
   def destroy
     product.destroy
-    respond_with product
+    respond_with :managers, product
   end
 
   private
