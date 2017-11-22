@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :managers
-  devise_for :users
-
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   namespace :managers do
     resources :products
     root 'products#index'
