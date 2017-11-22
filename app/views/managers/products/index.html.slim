@@ -1,0 +1,16 @@
+p#notice= notice
+h1 Products
+table
+  thead
+    tr
+      th Name
+      th Amount
+      th colspan="3"
+  = render products
+hr
+- if manager_signed_in?
+  = link_to 'New Product', new_managers_product_path
+  br
+  = link_to 'Sign out', destroy_manager_session_path, method: "delete"
+- else
+  = link_to 'Sign in as a manager', new_manager_session_path

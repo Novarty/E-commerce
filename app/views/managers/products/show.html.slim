@@ -1,0 +1,14 @@
+p#notice= notice
+p
+strong Name:
+= product.name
+p
+strong Amount:
+= product.amount
+hr
+- if manager_signed_in?
+  = link_to 'Edit', edit_managers_product_path(product)
+  br
+  = link_to 'Destroy',[:managers, product], method: :delete, data: {confirm: 'Are you sure?'}
+  br
+= link_to 'Back', managers_products_path
