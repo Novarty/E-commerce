@@ -21,6 +21,8 @@ gem "slim-rails"
 gem "decent_decoration", "~> 0.1.0"
 gem "decent_exposure", "3.0.0"
 gem "draper", "~> 3.0.0"
+gem "bootstrap", "~> 4.0.0.beta2.1"
+gem "jquery-rails"
 gem "responders"
 
 group :development, :test do
