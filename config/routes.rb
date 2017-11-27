@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   namespace :users do
     resources :products, only: [:index,:show]
+    resources :cart_products, only: [:index, :new, :destroy]
+    resources :orders, only: [:new, :show, :index]
     root 'products#index'
   end
   authenticated :manager do

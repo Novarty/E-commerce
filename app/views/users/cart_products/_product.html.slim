@@ -1,0 +1,6 @@
+.card
+  = image_tag("/assets/thumb.svg", :alt => "Sample App")
+  = link_to product.name,[:users, product]
+  = link_to "Убрать из корзины",
+    users_cart_product_path(product.id), method: :delete, data: {confirm: 'Вы уверены?'}
+  = product.amount

@@ -17,3 +17,6 @@ hr
   = link_to 'Sign in as a user', new_user_session_path
   br
   = link_to 'Sign in as a manager', new_manager_session_path
+= link_to users_cart_products_path do
+  = "Корзина (#{ session[:cart] ? session[:cart].uniq.size : "Пусто" })"
+hr

@@ -6,4 +6,6 @@ p
 strong Amount:
 = product.amount
 br
+= link_to "КУПИТЬ", new_users_cart_product_path(product_id: product.id) , class: "button"
+br
 = link_to 'Back', users_products_path
