@@ -12,13 +12,13 @@ class Users::CartProductsController < ApplicationController
 
     session[:cart].uniq!
 
-    redirect_back fallback_location: root_path
+    redirect_back fallback_location: root_path, notice: "Продукт был добавлен в корзину"
   end
 
   def destroy
     session[:cart].delete(params[:id])
 
-    redirect_back fallback_location: root_path
+    redirect_back fallback_location: root_path, notice: "Продукт был удален из корзины"
   end
 
   def delete_them_all
