@@ -1,5 +1,5 @@
 class Users::ProductsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
   expose :products, ->{ Product.all }
   expose :product
 

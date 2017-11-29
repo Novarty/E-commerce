@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :users do
     resources :products, only: [:index,:show]
     resources :cart_products, only: [:index, :new, :destroy]
+    match '/cart_products/destroy_them_all', to: 'cart_products#destroy_them_all', via: :delete
     resources :orders, only: [:new, :show, :index]
     root 'products#index'
   end
