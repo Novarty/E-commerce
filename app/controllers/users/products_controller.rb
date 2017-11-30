@@ -1,7 +1,7 @@
 class Users::ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  expose :products, ->{ init_products }
-  expose :product
+  expose_decorated :products, ->{ init_products }
+  expose_decorated :product
 
   def index; end
 

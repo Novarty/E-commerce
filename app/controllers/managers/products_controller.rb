@@ -1,12 +1,10 @@
 class Managers::ProductsController < ApplicationController
   before_action :authenticate_manager!, except: [:index, :show]
 
-  expose :products, ->{ Product.all }
-  expose :product
+  expose_decorated :products, ->{ Product.all }
+  expose_decorated :product
 
-  def index
-    # respond_with products
-  end
+  def index; end
 
   def show; end
 
@@ -33,6 +31,6 @@ class Managers::ProductsController < ApplicationController
   private
 
     def product_params
-      params.require(:product).permit(:name, :amount)
+      params.require(:product).permit(:name, :amount, :price, :description)
     end
 end

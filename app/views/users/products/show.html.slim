@@ -3,9 +3,14 @@ p
 strong Name:
 = product.name
 p
-strong Amount:
-= product.amount
-br
+strong Description:
+= product.description
+p
+strong Price:
+= product.price_in_dollars
+p
+= product.current_amount
+hr
 = link_to "Купить", new_users_cart_product_path(product_id: product.id)
 br
-= link_to 'Back', users_products_path
+= link_to 'Back', :back
