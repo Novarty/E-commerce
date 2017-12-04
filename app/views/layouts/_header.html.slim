@@ -5,19 +5,37 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item
-        a = link_to "Корзина", '#', class: 'nav-link'
+        a = link_to "My basket", '#', class: 'nav-link'
       li.nav-item
-        a = link_to "Мои заказы", '#', class: 'nav-link'
-      li.nav-item.dropdown
-        a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-          | Dropdown
-        .dropdown-menu aria-labelledby="navbarDropdown"
-          a.dropdown-item href="#"  Action
-          a.dropdown-item href="#"  Another action
-          .dropdown-divider
-          a.dropdown-item href="#"  Something else here
-      li.nav-item
-        a.nav-link.disabled href="#"  Disabled
+        a = link_to "My orders", '#', class: 'nav-link'
+      - if manager_signed_in?
+        li.nav-item
+          a = link_to 'New Product', new_managers_product_path, class: 'nav-link'
     form.form-inline.my-2.my-lg-0
       input.form-control.mr-sm-2 aria-label="Search" placeholder="Search" type="search" /
       button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search
+    ul.nav.nav-pills.float-right
+      - if anyone_signed_in?
+        - if user_signed_in?
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+              = current_user.email
+            .dropdown-menu aria-labelledby="navbarDropdown"
+              a.dropdown-item href="#"  Action
+              a = link_to 'Profile', '#', class: 'dropdown-item'
+              .dropdown-divider
+              a = link_to 'Sign out', destroy_user_session_path,
+              method: "delete", class: 'dropdown-item'
+        - if manager_signed_in?
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+              = current_manager.email
+            .dropdown-menu aria-labelledby="navbarDropdown"
+              a.dropdown-item href="#"  Action
+              a = link_to 'Profile', '#', class: 'dropdown-item'
+              .dropdown-divider
+              a = link_to 'Sign out', destroy_manager_session_path,
+              method: "delete", class: 'dropdown-item'
+      - else
+        li.nav-item
+          = link_to 'Sign in', new_user_session_path, class: 'nav-link'
