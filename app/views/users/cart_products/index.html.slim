@@ -1,6 +1,6 @@
 h3 Корзина
 = link_to "Создать заказ", new_users_order_path
-= link_to "Очистить корзину", users_cart_products_destroy_them_all_path, method: :delete,  data: {confirm: 'Данное действие очистит вашу корзину. Вы согласны?'}
+= link_to "Очистить корзину", users_cart_path , method: :delete,  data: {confirm: 'Данное действие очистит вашу корзину. Вы согласны?'}
 .album.text-muted
   .container
     .row

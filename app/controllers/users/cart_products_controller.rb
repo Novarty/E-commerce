@@ -2,7 +2,7 @@ class Users::CartProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :init_cart
 
-  expose_decorated :products, -> { init_products }
+  expose_decorated :products, -> { find_products }
 
   def index
   end
@@ -21,15 +21,9 @@ class Users::CartProductsController < ApplicationController
     redirect_back fallback_location: root_path, notice: "Продукт был удален из корзины"
   end
 
-  def delete_them_all
-    session.data.delete :cart
-
-    redirect_back fallback_location: root_path
-  end
-
   private
 
-  def init_products
+  def find_products
     Product.where id: session[:cart]
   end
 
