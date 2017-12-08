@@ -1,0 +1,25 @@
+.container
+  .form-signin
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .panel.panel-default.panel-body
+        h2.form-signin-heading
+          | Sign up
+        .field
+          = f.label :email
+          = f.email_field :email, autofocus: true, class: "form-control"
+        .field
+          = f.label :password
+          - if @minimum_password_length
+            em
+              | (#{@minimum_password_length} characters minimum)
+          = f.password_field :password, autocomplete: "off", class: "form-control"
+        .field
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+        .actions
+          = f.submit "Sign up", class: "btn btn-success"
+        = render "devise/shared/links"
+        = link_to 'Sign up as manager', new_manager_registration_path
+        br
+        = link_to 'Sign up as user', new_user_registration_path
