@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   default_url_options :host => "localhost:3000/"
   devise_for :managers
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users
+
   namespace :managers do
     resources :products
   end
