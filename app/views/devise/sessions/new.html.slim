@@ -16,9 +16,8 @@
             = f.label :remember_me
         .actions
           = f.submit "Sign in", class: "btn btn-success"
-          = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: "btn btn-info"
         hr
         = render "devise/shared/links"
-        hr
-        = link_to 'Sign in as manager', new_manager_session_path, class: "btn btn-link"
-        = link_to 'Sign in as user', new_user_session_path, class: "btn btn-link"
+        = link_to 'Sign in as manager', new_manager_session_path
+        br
+        = link_to 'Sign in as user', new_user_session_path
