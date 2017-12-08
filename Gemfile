@@ -25,6 +25,7 @@ gem "bootstrap", "~> 4.0.0.beta2.1"
 gem "jquery-rails"
 gem "responders"
 gem 'omniauth-google-oauth2'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
