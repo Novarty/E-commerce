@@ -1,0 +1,9 @@
+h3 Создание заказа
+.album.text-muted
+  .container
+    .row
+      = render collection: products, partial: "users/cart_products/product"
+    = form_for [:users, @order] do |form|
+      = fields_for :@ordered_products do |pf|
+        = pf.number_field :amount
+      = form.submit
