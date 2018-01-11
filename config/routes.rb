@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index,:show]
     resources :cart_products, only: [:index, :new, :destroy]
     resource :cart, only: :destroy
-    resources :orders, only: [:new, :show, :index]
+    resources :orders, only: [:new, :show, :create, :index]
     root 'products#index'
   end
   authenticated :manager do

@@ -5,8 +5,12 @@ table.table
     th Статус
     th
   tbody
-    - @orders.each do |order|
+    / - orders.each do |order|
       tr
         td = order.created_at
         td = order.status
-        td = link_to "Details", [ :users, order ]
+        td = link_to "Details", [ :managers, order ]
+    .album.text-muted
+      .container
+        .row
+          = render orders

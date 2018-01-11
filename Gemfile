@@ -13,7 +13,6 @@ gem "puma", "~> 3.7"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
-gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "pg"
 gem "devise"
@@ -25,6 +24,8 @@ gem "bootstrap", "~> 4.0.0.beta2.1"
 gem "jquery-rails"
 gem "responders"
 gem 'omniauth-google-oauth2'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'simple_form'
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console

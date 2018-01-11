@@ -4,14 +4,18 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
-      li.nav-item
-        = link_to users_cart_products_path, class: 'nav-link' do
-          = "Корзина (#{ session[:cart] ? session[:cart].uniq.size : "Пусто" })"
-      li.nav-item
-        a = link_to "My orders", users_orders_path, class: 'nav-link'
+      - if anyone_signed_in?
+      - if user_signed_in?
+        li.nav-item
+          = link_to users_cart_products_path, class: 'nav-link' do
+            = "My cart "
+            span.badge.badge-info
+              = "#{ session[:cart] ? session[:cart].uniq.size : ""}"
+        li.nav-item
+          a = link_to "My orders", users_orders_path, class: 'nav-link'
       - if manager_signed_in?
         li.nav-item
-          a = link_to 'New Product', new_managers_product_path, class: 'nav-link'
+          a = link_to 'Add new product', new_managers_product_path, class: 'nav-link'
     form.form-inline.my-2.my-lg-0
       input.form-control.mr-sm-2 aria-label="Search" placeholder="Search" type="search" /
       button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search

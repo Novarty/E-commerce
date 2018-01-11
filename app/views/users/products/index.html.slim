@@ -1,13 +1,15 @@
 main role="main"
   section.jumbotron.text-center
     .container
-      h1.jumbotron-heading Заглушка
-      p.lead.text-muted Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.
+      h1.jumbotron-heading E-commerce for everyone!
+      p.lead.text-muted Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas eget velit id hendrerit. Vestibulum consectetur nunc ornare, blandit massa eget, viverra neque. Etiam in tempor ante. Phasellus velit arcu, scelerisque vitae nisi pellentesque, consequat vehicula magna. 
       p
-        a.btn.btn-primary href="#"  Main call to action
-        a.btn.btn-secondary href="#"  Secondary action
+        = link_to "Popular things","#",
+          class: 'btn btn-outline-primary alert_button_size'
+        = link_to "About us","#",
+          class: 'btn btn-outline-secondary alert_button_size'
+
   .album.text-muted
     .container
       .row
         = render products
-hr
