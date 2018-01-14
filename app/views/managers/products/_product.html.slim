@@ -1,5 +1,9 @@
 .card
-  = image_tag("/assets/thumb.svg", :alt => "Sample App")
-  = link_to product.name,[:managers, product]
-  p.card-text = product.description
-  = product.price_in_dollars
+  .image
+    = image_tag product.avatar.url(:medium)
+  hr
+  .title
+    h3 = link_to product.name,[:managers, product]
+    p.card-text = product.description
+  .price
+    = product.price_in_dollars

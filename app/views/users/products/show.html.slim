@@ -4,7 +4,7 @@
     .col-auto
       .card
         .image
-          = image_tag("/assets/thumb.svg", :alt => "Sample App")
+          = image_tag product.avatar.url(:medium)
         .product_name
           h3 = link_to product.name,[:users, product]
         .product_description

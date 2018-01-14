@@ -1,19 +1,20 @@
-= image_tag("/assets/thumb.svg", :alt => "Sample App")
-p
-strong Name:
-= product.name
-p
-strong Description:
-= product.description
-p
-strong Price:
-= product.price_in_dollars
-p
-= product.current_amount
-hr
-- if manager_signed_in?
-  = link_to 'Edit', edit_managers_product_path(product)
-  br
-  = link_to 'Destroy',[:managers, product], method: :delete, data: {confirm: 'Are you sure?'}
-  br
-= link_to 'Back', :back
+.container
+  .row.title-field
+    .col
+    .col-auto
+      .card
+        .image
+          = image_tag product.avatar.url(:medium)
+        .product_name
+          h3 = link_to product.name,[:managers, product]
+        .product_description
+          = product.description
+        .stock
+          = product.current_amount
+        .price
+          = product.price_in_dollars
+        - if manager_signed_in?
+          = link_to 'Edit', edit_managers_product_path(product), class: 'btn btn-outline-info product_button'
+          = link_to 'Destroy',[:managers, product], method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger product_button'
+        = link_to 'Back', root_path, class: 'btn btn-outline-secondary product_button'
+    .col

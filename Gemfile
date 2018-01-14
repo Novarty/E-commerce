@@ -26,6 +26,8 @@ gem "responders"
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'simple_form'
+gem "paperclip", "~> 5.0.0"
+
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
