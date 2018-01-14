@@ -5,9 +5,9 @@
       .card
         .image
           = image_tag product.avatar.url(:medium)
-        .product_name
+        .name_of_product
           h3 = link_to product.name,[:managers, product]
-        .product_description
+        .description_of_product
           = product.description
         .stock
           = product.current_amount

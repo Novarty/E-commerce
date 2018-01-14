@@ -12,8 +12,7 @@
   text-align: center;
 }
 .card{
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 10px 25px 10px;
 }
 .content_center{
   margin: 0, auto;
@@ -22,6 +21,10 @@
   width: 250px;
   margin-left: 55px;
   margin-bottom: 15px;
+}
+.signin_button{
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 .order_button{
   width: 450px;
@@ -34,14 +37,14 @@
   margin-bottom: 15px;
 }
 .image{
-
+  height: 200px;
+  padding: 5px 5px 0px 5px;
 }
-.product_name{
+.name_of_product{
   text-align: center;
   margin-top: 5px;
-  // font-size: 25px;
 }
-.product_description{
+.description_of_product{
   text-align: center;
   font-size: 17px;
   margin-bottom: 5px;
