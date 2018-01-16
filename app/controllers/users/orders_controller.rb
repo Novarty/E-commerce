@@ -1,11 +1,13 @@
 class Users::OrdersController < ApplicationController
   before_action :authenticate_user!
 
-  expose_decorated :products, -> { find_products }
-  # expose :order, ->{current_user.orders.new(status: "Created", user: current_user)}
+  expose_decorated :orders, from: :current_user
+  expose_decorated :order
+
+  def index; end
 
   def new
-    @order = current_user.orders.new(status: "Created", user: current_user)
+    @order = current_user.orders.new
     @ordered_products = []
 
     session[:cart].each do |id|
@@ -13,30 +15,20 @@ class Users::OrdersController < ApplicationController
     end
   end
 
-  def index
-    @orders = current_user.orders.all
-  end
+  def show; end
 
   def create
-    @order = Order.create(order_params)
-    @order.status = "in_progress"
+    @order = current_user.orders.new(order_params.merge(status: "created"))
     if @order.save
       session[:cart] = []
-      redirect_to order, notice: 'Order was successfully updated.'
+      redirect_to [:users, @order], notice: 'Order was successfully created.'
     else
       render :new
     end
   end
 
-  def show
-    @order = Order.find(params[:id])
-  end
 
   private
-
-  def find_products
-    Product.where id: session[:cart]
-  end
 
   def order_params
     params.require(:order).permit(

@@ -1,22 +1,19 @@
 class OrderDecorator < Draper::Decorator
   delegate_all
 
+  def order_id
+      "Order №#{object.id}"
+  end
   def created_at
-    helpers.content_tag :span, class: 'time' do
-      object.created_at.strftime("%a %m/%d/%y")
-    end
+      object.created_at.strftime("%A %d/%m/%y ")
   end
 
-  def current_amount
-    "На складе: #{product.amount} шт."
+  def created_at_time
+    object.created_at.strftime("%k:%M ")
   end
 
-  def price_in_rub
-    "#{product.price} ₽"
-  end
-
-  def price_in_dollars
-    "#{product.price} $"
+  def updated_at
+      object.updated_at.strftime("%A %d/%m/%y ")
   end
 
 end

@@ -1,12 +1,15 @@
-h3 Заказы
-table.table
-  thead
-    th Дата создания
-    th Статус
-    th
-  tbody
-    - @orders.each do |order|
-      tr
-        td = order.created_at
-        td = order.status
-        td = link_to "Details", [ :users, order ]
+h3.title.title-field My orders
+.card
+  table.table
+    thead
+      th №
+      th Created at
+      th Order status
+      th
+    tbody
+      - orders.each do |order|
+        tr
+          td = order.id
+          td = order.created_at
+          td.status = order.status
+          td = link_to "Details", [ :users, order ]
