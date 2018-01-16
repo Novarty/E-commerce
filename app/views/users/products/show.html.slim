@@ -1,9 +1,18 @@
-p#notice= notice
-p
-strong Name:
-= product.name
-p
-strong Amount:
-= product.amount
-br
-= link_to 'Back', users_products_path
+.container
+  .row.title-field
+    .col
+    .col-auto
+      .card
+        .image
+          = image_tag("/assets/thumb.svg", :alt => "Sample App")
+        .product_name
+          h3 = link_to product.name,[:users, product]
+        .product_description
+          = product.description
+        .stock
+          = product.current_amount
+        .price
+          = product.price_in_dollars
+        = link_to "Add to cart", new_users_cart_product_path(product_id: product.id), class: 'btn btn-info product_button'
+        = link_to 'Back', root_path, class: 'btn btn-outline-secondary product_button'
+    .col

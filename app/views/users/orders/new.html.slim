@@ -1,0 +1,24 @@
+h3 Создание заказа
+.album.text-muted
+  .container
+    .row
+      = simple_form_for [:users, @order] do |m|
+        - @ordered_products.each do |op|
+            - @product = Product.find(op.product_id)
+            h3.title = @product.name
+            / = image_tag("/assets/thumb.svg", :alt => "Sample App")
+            / = @product.thumb
+            p.float-right
+              = @product.price
+              | $
+            = m.simple_fields_for :ordered_products, op do |p|
+              = p.hidden_field :product_id
+              = p.input :amount, as: :numeric
+        = m.button :submit
+      / = render collection: products, partial: "users/cart_products/product"
+    / = form_for [:users, @order] do |form|
+      - @ordered_products.each do |op|
+        = form.fields_for :ordered_products, op do |pf|
+          = pf.hidden_field :product_id
+          = pf.number_field :amount
+      = form.submit

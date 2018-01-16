@@ -1,0 +1,15 @@
+h3.title.title-field My cart
+
+.album.text-muted
+  .container
+    ul.list-group
+      = render collection: products, partial: "users/cart_products/product"
+    br
+    - if products.any?
+      = link_to "Clear cart",
+      users_cart_path , method: :delete,
+      data: {confirm: 'This action clear your shopping cart. Do you agree?'},
+      class: 'btn btn-lg btn-outline-danger order_button'
+      = link_to "Create order", new_users_order_path, class: 'btn btn-lg btn-info order_button'
+    - else
+      h4.title Your shopping cart is empty

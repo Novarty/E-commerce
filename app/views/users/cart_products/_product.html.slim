@@ -1,0 +1,8 @@
+li.row
+  .col-8
+    h4 = link_to product.name,[:users, product]
+    p = product.current_amount
+  .col-4
+    = link_to "Remove from cart",
+      users_cart_product_path(product.id), method: :delete, data: {confirm: 'Are you sure?'},
+      class: 'btn btn-outline-danger alert_button_size'
