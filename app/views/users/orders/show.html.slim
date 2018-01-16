@@ -1,9 +1,12 @@
-= image_tag("/assets/thumb.svg", :alt => "Sample App")
-p
-= @order.created_at
-p
-= @order.updated_at
-p
-= @order.status
-hr
-= link_to 'Back', :back
+.container.title-field
+  .row
+    .col
+    .col-4
+      .card
+        h3.title.title-field = order.order_id
+        .title
+          p Order created at: #{order.created_at_time + order.created_at}
+          p Last status update: #{order.updated_at}
+          p.status = order.status
+        = link_to 'Back', :back, class: 'btn btn-outline-link'
+    .col

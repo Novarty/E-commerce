@@ -1,13 +1,5 @@
-main role="main"
-  section.jumbotron.text-center
-    .container
-      h1.jumbotron-heading Заглушка
-      p.lead.text-muted Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.
-      p
-        a.btn.btn-primary href="#"  Main call to action
-        a.btn.btn-secondary href="#"  Secondary action
-  .album.text-muted
-    .container
-      .row
-        = render products
-hr
+= render "layouts/jumbotron"
+.album.text-muted
+  .container
+    .row
+      = render products

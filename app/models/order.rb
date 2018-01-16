@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   has_many :ordered_products
   has_many :products, through: :ordered_products
 
-  STATUSES = %w(Created In_progress Sent Done Cancelled)
+  STATUSES = %w(created in_progress sent done cancelled)
   validates :status, inclusion: STATUSES
 
   accepts_nested_attributes_for :ordered_products,

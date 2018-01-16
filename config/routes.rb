@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   namespace :managers do
     resources :products
+    resources :orders
   end
   namespace :users do
     resources :products, only: [:index,:show]

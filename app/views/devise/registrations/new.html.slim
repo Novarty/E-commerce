@@ -19,7 +19,10 @@
           = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
         .actions
           = f.submit "Sign up", class: "btn btn-success"
+        hr
         = render "devise/shared/links"
-        = link_to 'Sign up as manager', new_manager_registration_path
-        br
-        = link_to 'Sign up as user', new_user_registration_path
+        hr
+        = link_to 'Sign up as manager', new_manager_registration_path,
+        class: "btn btn-outline-info signin_button"
+        = link_to 'Sign up as user', new_user_registration_path,
+        class: "btn btn-outline-info signin_button"

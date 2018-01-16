@@ -1,5 +1,5 @@
 .card
-  = image_tag("/assets/thumb.svg", :alt => "Sample App")
+  = image_tag product.avatar.url(:medium)
   = link_to order.name,[:managers, order]
   p.card-text = order.created_at
   p.card-text = order.status
