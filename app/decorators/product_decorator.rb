@@ -7,6 +7,10 @@ class ProductDecorator < Draper::Decorator
     end
   end
 
+  def truncated_description
+    h.truncate(object.description, length: 30)
+  end
+
   def current_amount
     "На складе: #{product.amount} шт."
   end
