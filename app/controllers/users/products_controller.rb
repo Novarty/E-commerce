@@ -1,5 +1,6 @@
 class Users::ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+
   expose_decorated :products, ->{ init_products }
   expose_decorated :product
 
@@ -10,6 +11,8 @@ class Users::ProductsController < ApplicationController
   private
 
   def init_products
-    Product.where("amount > '0'")
+    products = Product.where("amount > '0'")
+    products = products.where("name ILIKE ?", "%#{params[:search]}%") if params[:search]
+    products # returns
   end
 end

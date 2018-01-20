@@ -1,7 +1,7 @@
 class Managers::ProductsController < ApplicationController
   before_action :authenticate_manager!, except: [:index, :show]
 
-  expose_decorated :products, ->{ Product.all }
+  expose_decorated :products, ->{ init_products }
   expose_decorated :product
 
   def index; end
@@ -30,13 +30,19 @@ class Managers::ProductsController < ApplicationController
 
   private
 
-    def product_params
-      params.require(:product).permit(
-        :name,
-        :avatar,
-        :amount,
-        :price,
-        :description
-      )
-    end
+  def init_products
+    products = Product.all
+    products = products.where("name ILIKE ?", "%#{params[:search]}%") if params[:search]
+    products # returns
+  end
+
+  def product_params
+    params.require(:product).permit(
+      :name,
+      :avatar,
+      :amount,
+      :price,
+      :description
+    )
+  end
 end
