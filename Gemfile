@@ -23,9 +23,8 @@ gem "draper", "~> 3.0.0"
 gem "bootstrap", "~> 4.0.0.beta2.1"
 gem "jquery-rails"
 gem "responders"
-gem 'omniauth-google-oauth2'
-gem 'dotenv-rails', groups: [:development, :test]
-gem 'simple_form'
+gem "omniauth-google-oauth2"
+gem "simple_form"
 gem "paperclip", "~> 5.0.0"
 
 
@@ -36,6 +35,8 @@ group :development, :test do
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
   gem "rspec-rails", "~> 3.6"
+  gem "aws-sdk", "~> 2.3.0"
+  gem "figaro"
 end
 
 group :development do
