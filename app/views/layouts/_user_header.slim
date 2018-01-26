@@ -1,0 +1,18 @@
+ul.navbar-nav.mr-auto
+  li.nav-item
+    = link_to users_cart_products_path, class: 'nav-link' do
+      = t('user_nav.my_cart')
+      span.badge.badge-info
+        = "#{ session[:cart] ? session[:cart].uniq.size : ""}"
+  li.nav-item
+    a = link_to t('user_nav.my_orders'), users_orders_path, class: 'nav-link'
+= render 'layouts/search'
+ul.nav.nav-pills.float-right
+  li.nav-item.dropdown
+    a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+      = current_user.email
+    .dropdown-menu aria-labelledby="navbarDropdown"
+      a = link_to t('user_nav.profile'), '#', class: 'dropdown-item'
+      .dropdown-divider
+      a = link_to t('devise.sessions.sign_out'), destroy_user_session_path,
+      method: "delete", class: 'dropdown-item'

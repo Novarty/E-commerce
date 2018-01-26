@@ -4,6 +4,6 @@
   hr
   .title
     h3 = link_to product.name,[:managers, product]
-    p.card-text = product.description
+    p.card-text = product.truncated_description
   .price
     = product.price_in_dollars

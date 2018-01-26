@@ -1,0 +1,8 @@
+en:
+  product:
+    avatar: 'Add image'
+    to_card: 'Add to cart'
+    new:
+      title: 'New product'
+    edit:
+      title: 'Update product information'

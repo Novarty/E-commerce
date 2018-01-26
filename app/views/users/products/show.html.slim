@@ -3,8 +3,8 @@
     .col
     .col-auto
       .card
-        .image
-          = image_tag product.avatar.url(:medium)
+        .large_image
+          = image_tag product.avatar.url(:large)
         .name_of_product
           h3 = link_to product.name,[:users, product]
         .description_of_product
@@ -13,6 +13,6 @@
           = product.current_amount
         .price
           = product.price_in_dollars
-        = link_to "Add to cart", new_users_cart_product_path(product_id: product.id), class: 'btn btn-info product_button'
-        = link_to 'Back', root_path, class: 'btn btn-outline-secondary product_button'
+        = link_to t('product.to_card'), new_users_cart_product_path(product_id: product.id), class: 'btn btn-info product_button'
+        = link_to t('links.back'), root_path, class: 'btn btn-outline-secondary product_button'
     .col

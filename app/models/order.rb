@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
   has_many :ordered_products
-  has_many :products, through: :ordered_products
+  has_many :products, through: :ordered_products, dependent: :destroy
 
   STATUSES = %w(created in_progress sent done cancelled)
   validates :status, inclusion: STATUSES

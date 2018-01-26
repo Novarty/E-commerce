@@ -1,15 +1,12 @@
-h3 Создание заказа
+h3.title.title-field = t('order.new.title')
 .album.text-muted
   .container
     .row
       = simple_form_for [:users, @order] do |m|
         - @ordered_products.each do |op|
-            = image_tag op.product.avatar.url(:medium)
-            h3.title = op.product.name
-            p.float-right
-              = op.product.price
-              | $
-            = m.simple_fields_for :ordered_products, op do |p|
-              = p.hidden_field :product_id
-              = p.input :amount, as: :numeric
-        = m.button :submit
+          = image_tag op.product.avatar.url(:medium)
+          h3.title = op.product.name
+          = m.simple_fields_for :ordered_products, op do |p|
+            = p.hidden_field :product_id
+            = p.input :amount, as: :numeric
+        = m.button :submit, class: 'btn-success'

@@ -2,7 +2,7 @@
   .row
     .col
     .col-auto
-      h3.title.title-field Editing Product
+      h3.title.title-field = t('product.edit.title')
       = render 'form'
-      = link_to 'Back', :back, class: 'btn btn-outline-link'
+      = link_to t('links.back'), :back, class: 'btn btn-outline-link'
     .col

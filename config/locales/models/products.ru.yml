@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      product: 'Продукт'
+    attributes:
+      product:
+        name: 'Название'
+        amount: 'Количество'
+        price: 'Цена'
+        description: 'Описание'
+        avatar_file_name: 'Изображение продукта'

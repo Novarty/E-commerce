@@ -3,8 +3,8 @@
     .col
     .col-auto
       .card
-        .image
-          = image_tag product.avatar.url(:medium)
+        .large_image
+          = image_tag product.avatar.url(:large)
         .name_of_product
           h3 = link_to product.name,[:managers, product]
         .description_of_product
@@ -14,7 +14,7 @@
         .price
           = product.price_in_dollars
         - if manager_signed_in?
-          = link_to 'Edit', edit_managers_product_path(product), class: 'btn btn-outline-info product_button'
-          = link_to 'Destroy',[:managers, product], method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger product_button'
-        = link_to 'Back', root_path, class: 'btn btn-outline-secondary product_button'
+          = link_to t('links.edit'), edit_managers_product_path(product), class: 'btn btn-outline-info product_button'
+          = link_to t('links.destroy'),[:managers, product], method: :delete, data: {confirm: t('links.confirm'}, class: 'btn btn-outline-danger product_button'
+        = link_to t('links.back'), :back, class: 'btn btn-outline-secondary product_button'
     .col

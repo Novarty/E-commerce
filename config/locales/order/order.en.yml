@@ -1,0 +1,11 @@
+en:
+  order:
+    orders: 'Orders'
+    created_at: 'Order date:'
+    updated_at: 'Date of last update of the order: '
+    status: 'Status'
+    details: 'Details'
+    new:
+      title: 'Create order'
+    show:
+      title: 'My orders'

@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      product: 'Product'
+    attributes:
+      product:
+        name: 'Name'
+        amount: 'Amount'
+        price: 'Price'
+        description: 'Description'
+        avatar_file_name: 'Product image'

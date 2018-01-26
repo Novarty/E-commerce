@@ -1,0 +1,16 @@
+en:
+  jumbotron:
+    heading: "E-commerce for everyone!"
+    popular_button: "Popular things"
+    about_us: "About us"
+  footer:
+    homepage: 'Visit the homepage '
+    read_our: ' or you would read our '
+  user_nav:
+    my_cart: 'My cart '
+    my_orders: 'My orders'
+    profile: 'My profile'
+  manager_nav:
+    create_product: 'Add new product'
+    my_orders: 'Order management'
+    profile: 'My profile'
