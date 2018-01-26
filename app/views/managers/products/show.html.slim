@@ -15,6 +15,6 @@
           = product.price_in_dollars
         - if manager_signed_in?
           = link_to t('links.edit'), edit_managers_product_path(product), class: 'btn btn-outline-info product_button'
-          = link_to t('links.destroy'),[:managers, product], method: :delete, data: {confirm: t('links.confirm'}, class: 'btn btn-outline-danger product_button'
+          = link_to t('links.destroy'),[:managers, product], method: :delete, data: {confirm: t('links.confirm')}, class: 'btn btn-outline-danger product_button'
         = link_to t('links.back'), :back, class: 'btn btn-outline-secondary product_button'
     .col
