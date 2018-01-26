@@ -1,0 +1,16 @@
+ru:
+  jumbotron:
+    heading: "E-commerce для каждого"
+    popular_button: "Популярное"
+    about_us: "О нас"
+  footer:
+    homepage: 'Перейти на главную '
+    read_our: ' или вы можете прочитать наш '
+  user_nav:
+    my_cart: 'Моя корзина '
+    my_orders: 'Мои заказы'
+    profile: 'Мой профиль'
+  manager_nav:
+    create_product: 'Добавить новый продукт'
+    my_orders: 'Управление заказами'
+    profile: 'Мой профиль'

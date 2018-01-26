@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      order: 'Order'
+    attributes:
+      order:
+        status: 'Status'
+        created_at: 'Date of create'
+        updated_at: 'Date of last update'

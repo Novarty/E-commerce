@@ -20,7 +20,7 @@ class ProductDecorator < Draper::Decorator
   end
 
   def price_in_dollars
-    "#{product.price} $"
+    "$#{product.price}"
   end
 
 end

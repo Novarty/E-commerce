@@ -1,0 +1,11 @@
+ru:
+  order:
+    orders: 'Заказы'
+    created_at: 'Дата заказа:'
+    updated_at: 'Дата последнего изменения заказа: '
+    status: 'Статус'
+    details: 'Детали заказа'
+    new:
+      title: 'Создать заказ'
+    show:
+      title: 'Мои заказы'

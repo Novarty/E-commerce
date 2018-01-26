@@ -1,33 +1,19 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  links:
+    search: 'Search'
+    errors: 'При заполнении формы возникли ошибки:'
+    back: 'Back'
+    cancel: "Cancel"
+    confirm: "Are you sure?"
+    destroy: "Delete"
+    new: "New"
+    edit: "Edit"
+    show: "Show"
+    update: "Update"
+    manager_sign_in: "Sign in as manager"
+    manager_sign_up: "Sign up as manager"
+    user_sign_in: "Sign in as user"
+    user_sign_up: "Sign up as user"
+    clear_cart: "Clean cart"
+    remove_from_cart: "Remove from cart"
+    cart_delete_confirm: "This action clear your shopping cart. Continue?"

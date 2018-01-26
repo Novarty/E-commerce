@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      order: 'Заказ'
+    attributes:
+      order:
+        status: 'Статус'
+        created_at: 'Дата создания'
+        updated_at: 'Дата последнего изменения'
+  

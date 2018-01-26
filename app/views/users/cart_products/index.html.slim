@@ -1,4 +1,4 @@
-h3.title.title-field My cart
+h3.title.title-field = t('cart.title')
 
 .album.text-muted
   .container
@@ -6,10 +6,10 @@ h3.title.title-field My cart
       = render collection: products, partial: "users/cart_products/product"
     br
     - if products.any?
-      = link_to "Clear cart",
+      = link_to t('links.clear_cart'),
       users_cart_path , method: :delete,
-      data: {confirm: 'This action clear your shopping cart. Do you agree?'},
+      data: {confirm: t('links.cart_delete_confirm')},
       class: 'btn btn-lg btn-outline-danger order_button'
-      = link_to "Create order", new_users_order_path, class: 'btn btn-lg btn-info order_button'
+      = link_to t('order.new.title'), new_users_order_path, class: 'btn btn-lg btn-info order_button'
     - else
-      h4.title Your shopping cart is empty
+      h4.title = t('cart.empty')

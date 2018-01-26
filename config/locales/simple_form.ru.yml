@@ -1,0 +1,25 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательное поле'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "При заполнении формы возникли ошибки:"
+    labels:
+        product:
+          name: 'Название продукта'
+          amount: 'Количество на складе'
+        ordered_products:
+          amount: 'Количество единиц товара'
+  helpers:
+    submit:
+      product:
+        create: "Добавить продукт"
+        update: "Сохранить изменения"
+      order:
+        create: "Создать заказ"

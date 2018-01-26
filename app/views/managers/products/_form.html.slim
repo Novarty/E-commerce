@@ -1,8 +1,10 @@
-= simple_form_for [:managers,product] do |f|
-  = f.error_notification
-  = f.input :name, label: 'Name of product'
-  = f.input :avatar, as: :file
-  = f.input :description, as: :text
-  = f.input :price, as: :numeric
-  = f.input :amount, as: :numeric
-  = f.button :submit
+.alert.alert-info
+  = simple_form_for [:managers,product] do |f|
+    = f.error_notification
+    = f.input :name
+    p = t('product.avatar')
+    = f.input :avatar, as: :file, label:false
+    = f.input :description, as: :text
+    = f.input :price, as: :numeric
+    = f.input :amount, as: :numeric
+    = f.button :submit, class: 'btn-success'

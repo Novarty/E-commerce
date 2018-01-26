@@ -1,10 +1,10 @@
-h3.title.title-field My orders
+h3.title.title-field = t('order.show.title')
 .card
   table.table
     thead
       th №
-      th Created at
-      th Order status
+      th = t('order.created_at')
+      th = t('order.status')
       th
     tbody
       - orders.each do |order|
@@ -12,4 +12,4 @@ h3.title.title-field My orders
           td = order.id
           td = order.created_at
           td.status = order.status
-          td = link_to "Details", [ :users, order ]
+          td = link_to t('order.details'), [ :users, order ]
