@@ -1,0 +1,15 @@
+en:
+  managers:
+    profile:
+      heading: 'My profile'
+      email: 'Email: '
+      created_at: 'Created at: '
+      edit: 'Edit my profile'
+      name: 'Name: '
+  users:
+    profile:
+      heading: 'My profile'
+      email: 'Email: '
+      created_at: 'Created at: '
+      edit: 'Edit my profile'
+      name: 'Name: '

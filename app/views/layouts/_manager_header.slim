@@ -9,7 +9,7 @@ ul.nav.nav-pills.float-right
     a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
       = current_manager.email
     .dropdown-menu aria-labelledby="navbarDropdown"
-      a = link_to t('manager_nav.profile'), '#', class: 'dropdown-item'
+      a = link_to t('manager_nav.profile'), managers_profile_path(current_manager), class: 'dropdown-item'
       .dropdown-divider
       a = link_to t('devise.sessions.sign_out'), destroy_manager_session_path,
       method: "delete", class: 'dropdown-item'

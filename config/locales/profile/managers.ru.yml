@@ -1,0 +1,15 @@
+ru:
+  managers:
+    profile:
+      heading: 'Мой профиль'
+      email: 'Email: '
+      created_at: 'Дата регистрации: '
+      edit: 'Изменить данные профиля'
+      name: 'Имя: '
+  users:
+    profile:
+      heading: 'Мой профиль'
+      email: 'Email: '
+      created_at: 'Дата регистрации: '
+      edit: 'Изменить данные профиля'
+      name: 'Имя: '
