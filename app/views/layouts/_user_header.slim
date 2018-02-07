@@ -12,7 +12,7 @@ ul.nav.nav-pills.float-right
     a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
       = current_user.email
     .dropdown-menu aria-labelledby="navbarDropdown"
-      a = link_to t('user_nav.profile'), '#', class: 'dropdown-item'
+      a = link_to t('user_nav.profile'), users_profile_path(current_user), class: 'dropdown-item'
       .dropdown-divider
       a = link_to t('devise.sessions.sign_out'), destroy_user_session_path,
       method: "delete", class: 'dropdown-item'

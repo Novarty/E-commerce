@@ -1,0 +1,20 @@
+.container
+  .row-title-field
+    h3.title.title-field  = t('users.profile.heading')
+    .card
+      .profile_image
+        = image_tag profile.avatar.url(:medium)
+      .name_of_product
+        p
+          strong = t('users.profile.name')
+          = profile.name
+        p
+          strong = t('users.profile.email')
+          = profile.email
+        p
+          strong = t('users.profile.created_at')
+          = profile.created_at
+      = link_to t('users.profile.edit'), '/users/edit',
+      class: 'btn btn-outline-info product_button'
+      = link_to t('links.back'), :back,
+      class: 'btn btn-outline-secondary product_button'
