@@ -7,6 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'bootstrap4-kaminari-views'
 gem 'coffee-rails', '~> 4.2'
 gem 'decent_decoration', '~> 0.1.0'
 gem 'decent_exposure', '3.0.0'
@@ -14,6 +15,7 @@ gem 'devise'
 gem 'draper', '~> 3.0.0'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'omniauth-google-oauth2'
 gem 'paperclip', '~> 5.0.0'
 gem 'pg'
