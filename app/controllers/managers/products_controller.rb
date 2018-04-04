@@ -33,7 +33,7 @@ class Managers::ProductsController < ApplicationController
   def init_products
     products = Product.all
     products = products.where('name ILIKE ?', "%#{params[:search]}%") if params[:search]
-    products # returns
+    products.page(params[:page]) # returns
   end
 
   def product_params
