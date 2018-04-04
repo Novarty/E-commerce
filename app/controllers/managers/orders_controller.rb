@@ -3,7 +3,7 @@ class Managers::OrdersController < ApplicationController
 
   # expose_decorated :ordered_products, -> { OrderProduct.all }
   # expose_decorated :ordered_product
-  
+
   expose_decorated :orders, -> { Order.all }
 
   def index; end
@@ -13,7 +13,7 @@ class Managers::OrdersController < ApplicationController
   def edit; end
 
   def update
-    @order= Order.update(order_params)
+    @order = Order.update(order_params)
     @order.save
   end
 
@@ -21,7 +21,7 @@ class Managers::OrdersController < ApplicationController
     params.require(:order).permit(
       :user_id,
       :status,
-      ordered_products_attributes: [ :product_id, :order_id,  :amount, :_destroy ]
+      ordered_products_attributes: %i[product_id order_id amount _destroy]
     )
   end
 end

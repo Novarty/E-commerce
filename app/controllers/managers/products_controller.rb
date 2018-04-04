@@ -1,7 +1,7 @@
 class Managers::ProductsController < ApplicationController
-  before_action :authenticate_manager!, except: [:index, :show]
+  before_action :authenticate_manager!, except: %i[index show]
 
-  expose_decorated :products, ->{ init_products }
+  expose_decorated :products, -> { init_products }
   expose_decorated :product
 
   def index; end
@@ -32,7 +32,7 @@ class Managers::ProductsController < ApplicationController
 
   def init_products
     products = Product.all
-    products = products.where("name ILIKE ?", "%#{params[:search]}%") if params[:search]
+    products = products.where('name ILIKE ?', "%#{params[:search]}%") if params[:search]
     products # returns
   end
 
