@@ -4,6 +4,6 @@ class Users::CartsController < ApplicationController
   def destroy
     session[:cart] = []
 
-    redirect_back fallback_location: root_path, notice: "Корзина была очищена"
+    redirect_back fallback_location: root_path, notice: 'Корзина была очищена'
   end
 end

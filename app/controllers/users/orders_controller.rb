@@ -18,7 +18,7 @@ class Users::OrdersController < ApplicationController
   def show; end
 
   def create
-    @order = current_user.orders.new(order_params.merge(status: "created"))
+    @order = current_user.orders.new(order_params.merge(status: 'created'))
     if @order.save
       session[:cart] = []
       redirect_to [:users, @order], notice: 'Order was successfully created.'
@@ -27,14 +27,13 @@ class Users::OrdersController < ApplicationController
     end
   end
 
-
   private
 
   def order_params
     params.require(:order).permit(
       :user_id,
       :status,
-      ordered_products_attributes: [ :product_id, :order_id,  :amount, :_destroy ]
+      ordered_products_attributes: %i[product_id order_id amount _destroy]
     )
   end
 end

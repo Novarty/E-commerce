@@ -4,21 +4,20 @@ class Users::CartProductsController < ApplicationController
 
   expose_decorated :products, -> { find_products }
 
-  def index
-  end
+  def index; end
 
   def new
     session[:cart] << params[:product_id] if Product.find_by(id: params[:product_id])
 
     session[:cart].uniq!
 
-    redirect_back fallback_location: root_path, notice: "Продукт был добавлен в корзину"
+    redirect_back fallback_location: root_path, notice: 'Продукт был добавлен в корзину'
   end
 
   def destroy
     session[:cart].delete(params[:id])
 
-    redirect_back fallback_location: root_path, notice: "Продукт был удален из корзины"
+    redirect_back fallback_location: root_path, notice: 'Продукт был удален из корзины'
   end
 
   private

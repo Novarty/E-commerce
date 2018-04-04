@@ -3,7 +3,7 @@ class ProductDecorator < Draper::Decorator
 
   def created_at
     helpers.content_tag :span, class: 'time' do
-      object.created_at.strftime("%a %m/%d/%y")
+      object.created_at.strftime('%a %m/%d/%y')
     end
   end
 
@@ -22,5 +22,4 @@ class ProductDecorator < Draper::Decorator
   def price_in_dollars
     "$#{product.price}"
   end
-
 end
