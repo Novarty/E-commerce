@@ -13,6 +13,6 @@ class Users::ProductsController < ApplicationController
   def init_products
     products = Product.where("amount > '0'")
     products = products.where('name ILIKE ?', "%#{params[:search]}%") if params[:search]
-    products # returns
+    products.page(params[:page]) # returns
   end
 end

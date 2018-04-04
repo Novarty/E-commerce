@@ -22,4 +22,8 @@ class ProductDecorator < Draper::Decorator
   def price_in_dollars
     "$#{product.price}"
   end
+
+  def self.collection_decorator_class
+    PaginatingDecorator
+  end
 end
